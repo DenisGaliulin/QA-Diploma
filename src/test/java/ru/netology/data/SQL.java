@@ -124,4 +124,28 @@ public class SQL {
         }
         return null;
     }
+
+    public static String getLastPaymentStatus() {
+        String statusQuery = "SELECT * FROM app.payment_entity ORDER BY created DESC LIMIT 1";
+        val runner = new QueryRunner();
+        try (Connection connection = getConnection()) {
+            val cardStatus = runner.query(connection, statusQuery, new BeanHandler<>(PaymentEntity.class));
+            return cardStatus.getStatus();
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
+        }
+        return null;
+    }
+
+    public static String getLastCreditStatus() {
+        String statusQuery = "SELECT * FROM app.credit_request_entity ORDER BY created DESC LIMIT 1";
+        val runner = new QueryRunner();
+        try (Connection connection = getConnection()) {
+            val cardStatus = runner.query(connection, statusQuery, new BeanHandler<>(CreditRequestEntity.class));
+            return cardStatus.getStatus();
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
+        }
+        return null;
+    }
 }

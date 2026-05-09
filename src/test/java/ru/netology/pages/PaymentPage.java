@@ -38,19 +38,19 @@ public class PaymentPage {
     }
 
     public void shouldImproperFormatNotification() {
-        improperFormat.shouldBe(Condition.visible);
+        improperFormat.shouldHave(exactText("Неверный формат")).shouldBe(Condition.visible);
     }
 
     public void shouldEmptyFieldNotification() {
-        emptyField.shouldBe(Condition.visible);
+        emptyField.shouldHave(exactText("Поле обязательно для заполнения")).shouldBe(Condition.visible);
     }
 
     public void shouldInvalidExpiredDateNotification() {
-        invalidExpiredDate.shouldBe(Condition.visible);
+        invalidExpiredDate.shouldHave(exactText("Неверно указан срок действия карты")).shouldBe(Condition.visible);
     }
 
     public void shouldExpiredDatePassNotification() {
-        expiredDatePass.shouldBe(Condition.visible);
+        expiredDatePass.shouldHave(exactText("Истёк срок действия карты")).shouldBe(Condition.visible);
     }
 
     public void shouldSuccessNotification() {

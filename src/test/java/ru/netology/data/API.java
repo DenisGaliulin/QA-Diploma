@@ -18,7 +18,7 @@ public class API {
             .log(LogDetail.ALL)
             .build();
 
-    public static String PaymentPageForm (Data.CardData cardData) {
+    public static String paymentPageForm(Data.CardData cardData) {
         return given()
                 .spec(requestSpec)
                 .body(cardData)
@@ -29,7 +29,7 @@ public class API {
                 .extract().response().asString();
     }
 
-    public static String CreditRequestPageForm (Data.CardData cardData) {
+    public static String creditRequestPageForm(Data.CardData cardData) {
         return given()
                 .spec(requestSpec)
                 .body(cardData)
