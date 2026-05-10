@@ -51,7 +51,7 @@ docker-compose up
   PostgreSQL
 
 3. Приложение должно запуститься
-   ![app run](https://user-images.githubusercontent.com/67016228/99146975-0077e100-268e-11eb-90d3-425239976d8f.jpg)
+   ![img.png](img.png)
    работать по адресу http://localhost:8080/
 
 ## Запуск тестов
