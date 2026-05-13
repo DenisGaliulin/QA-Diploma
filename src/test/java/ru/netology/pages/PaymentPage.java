@@ -5,6 +5,8 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import ru.netology.data.Data;
 
+import java.time.Duration;
+
 import static com.codeborne.selenide.Condition.exactText;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
@@ -54,11 +56,10 @@ public class PaymentPage {
     }
 
     public void shouldSuccessNotification() {
-        successNote.waitUntil(Condition.visible, 15000);
+        successNote.shouldBe(Condition.visible, Duration.ofSeconds(15));
     }
 
     public void shouldFailureNotification() {
-        failureNote.waitUntil(Condition.visible, 15000);
+        failureNote.shouldBe(Condition.visible, Duration.ofSeconds(15));
     }
-
 }
