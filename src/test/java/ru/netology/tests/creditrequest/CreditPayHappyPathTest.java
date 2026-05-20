@@ -40,7 +40,7 @@ public class CreditPayHappyPathTest extends TestBaseUI {
     }
 
     @Test
-    public void shouldFailurePayIfValidDeclinedCards() {
+    public void shouldFailureCreditPayIfValidDeclinedCards() {
         val cardData = getDeclinedCard();
         paymentPage.fillCardData(cardData);
         paymentPage.shouldFailureNotification();
